@@ -225,6 +225,15 @@
       el.addEventListener("change", function () { clearError(el); });
     });
 
+    // Feedback consent is a required checkbox (its label isn't a .field).
+    var feedbackEl = form.elements["feedback"];
+    var feedbackField = document.getElementById("bf-feedback-field");
+    if (feedbackEl && feedbackField) {
+      feedbackEl.addEventListener("change", function () {
+        feedbackField.classList.remove("invalid");
+      });
+    }
+
     var validEmail = function (v) {
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
     };
@@ -248,6 +257,13 @@
           clearError(input);
         }
       });
+
+      // Feedback consent must be checked.
+      if (feedbackEl && !feedbackEl.checked) {
+        ok = false;
+        if (feedbackField) feedbackField.classList.add("invalid");
+        if (!firstInvalid) firstInvalid = feedbackEl;
+      }
 
       if (!ok) {
         if (firstInvalid && firstInvalid.focus) firstInvalid.focus();
