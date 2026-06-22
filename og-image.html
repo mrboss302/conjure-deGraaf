@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 1200px; height: 630px; }
+    body {
+      position: relative; overflow: hidden;
+      background: #0B0B0D;
+      font-family: "Inter", sans-serif; color: #F4EFE6;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 88px 96px;
+    }
+    .aura {
+      position: absolute; inset: -20% -10% auto auto; width: 760px; height: 760px;
+      background: radial-gradient(closest-side, rgba(139,92,246,.55), rgba(6,182,212,.22) 55%, transparent 72%);
+      filter: blur(20px); opacity: .9;
+    }
+    .grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(244,239,230,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(244,239,230,.05) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(120% 120% at 70% 0%, #000 30%, transparent 80%);
+    }
+    .wrap { position: relative; z-index: 1; }
+    .brand { display: flex; align-items: center; gap: 16px; margin-bottom: 56px; }
+    .mark {
+      width: 40px; height: 40px; border-radius: 12px;
+      background: linear-gradient(120deg, #C4B5FD, #8B5CF6 40%, #06B6D4 78%, #67E8F9);
+      box-shadow: 0 8px 30px rgba(139,92,246,.45);
+    }
+    .brand-words { display: flex; flex-direction: column; line-height: 1.05; }
+    .brand-parent { font-family: "JetBrains Mono", monospace; font-size: 15px; letter-spacing: .26em; text-transform: uppercase; color: #B9B2A4; }
+    .brand-product { font-family: "Fraunces", serif; font-size: 30px; font-weight: 500; }
+    .eyebrow { font-family: "JetBrains Mono", monospace; font-size: 16px; letter-spacing: .22em; text-transform: uppercase; color: #E8C99B; display: flex; align-items: center; gap: 12px; margin-bottom: 26px; }
+    .eyebrow .dot { width: 9px; height: 9px; border-radius: 50%; background: #34D9B0; box-shadow: 0 0 14px #34D9B0; }
+    h1 { font-family: "Fraunces", serif; font-weight: 400; font-size: 84px; line-height: 1.0; letter-spacing: -0.015em; max-width: 880px; }
+    h1 em { font-style: italic; color: #E8C99B; }
+    p.lede { margin-top: 30px; font-size: 26px; line-height: 1.45; color: #B9B2A4; max-width: 720px; }
+    .foot { position: absolute; left: 96px; bottom: 64px; z-index: 1; font-family: "JetBrains Mono", monospace; font-size: 16px; letter-spacing: .06em; color: #837C70; }
+  </style>
+</head>
+<body>
+  <div class="aura"></div>
+  <div class="grid"></div>
+  <div class="wrap">
+    <div class="brand">
+      <span class="mark"></span>
+      <span class="brand-words">
+        <span class="brand-parent">deGraaf</span>
+        <span class="brand-product">Conjure</span>
+      </span>
+    </div>
+    <div class="eyebrow"><span class="dot"></span>The AI website studio</div>
+    <h1>Conjure a website <em>worth launching.</em></h1>
+    <p class="lede">Describe your idea. Shape the copy as the design lands. Join the waitlist for the macOS beta.</p>
+  </div>
+  <div class="foot">conjure.degraaf.app · TestFlight beta</div>
+</body>
+</html>
