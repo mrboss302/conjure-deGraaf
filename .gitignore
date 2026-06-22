@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Logs / env (none used yet, but keep secrets out of the repo)
+*.log
+.env
+.env.*

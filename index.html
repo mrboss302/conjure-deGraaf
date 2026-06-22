@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>deGraaf Conjure — The AI website studio</title>
+  <meta name="description" content="Conjure is an AI website studio for turning rough ideas into polished, editable websites without losing creative control. Describe your site, review the copy before the design lands, and refine with the assistant. Join the waitlist for the macOS beta." />
+  <meta name="theme-color" content="#0B0B0D" />
+
+  <!-- Social -->
+  <meta property="og:title" content="deGraaf Conjure — Conjure a website worth launching." />
+  <meta property="og:description" content="An AI website studio for shaping rough ideas into polished, editable sites. Join the waitlist for the macOS beta." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://conjure.degraaf.app/" />
+  <!-- TODO(og): add a 1200x630 share image and point this at its absolute URL. -->
+  <meta property="og:image" content="https://conjure.degraaf.app/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Ambient layers (decorative) -->
+  <div class="bg-aura" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-grain" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================ NAV ============================ -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="deGraaf Conjure home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-words">
+          <span class="brand-parent">deGraaf</span>
+          <span class="brand-product">Conjure</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#product">Product</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#examples">Examples</a>
+        <a href="#beta">Beta</a>
+        <a href="#degraaf">deGraaf</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#beta" class="btn btn-primary nav-cta">Join the Waitlist</a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <a href="#product">Product</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#examples">Examples</a>
+      <a href="#beta">Beta</a>
+      <a href="#degraaf">deGraaf</a>
+      <a href="#beta" class="btn btn-primary">Join the Waitlist</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <span id="top"></span>
+
+    <!-- ============================ HERO ============================ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>The AI website studio</p>
+        <h1 id="hero-title" class="display">
+          Conjure a website
+          <span class="accent-italic">worth launching.</span>
+        </h1>
+        <p class="lede">
+          Describe what you have in mind. Conjure drafts the structure and copy, lets you
+          shape every word while the design takes form, then hands you a polished site you
+          can keep refining — all without losing creative control.
+        </p>
+        <div class="hero-cta">
+          <a href="#beta" class="btn btn-primary btn-lg">Join the Waitlist</a>
+          <a href="#workflow" class="btn btn-ghost btn-lg">
+            See the workflow
+            <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path d="M3 8h9M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <p class="hero-trust">
+          Opening first on macOS through TestFlight · The first release from deGraaf
+        </p>
+      </div>
+
+      <!-- Signature: the living Conjure window -->
+      <div class="hero-stage reveal" data-reveal-delay="120">
+        <div class="window" id="conjure-window" role="img" aria-label="The Conjure studio: a build timeline, editable copy, and a live design preview of a generated website.">
+          <!-- Window top bar -->
+          <div class="win-top">
+            <div class="traffic" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="win-project">
+              <span class="win-project-mark" aria-hidden="true"></span>
+              <span class="win-project-name">Marigold <em>·</em> Conjure</span>
+            </div>
+            <div class="win-modes" aria-hidden="true">
+              <span class="mode active">Design</span>
+              <span class="mode">Code</span>
+              <span class="mode">Preview</span>
+            </div>
+            <div class="win-top-right">
+              <span class="credits" aria-hidden="true"><i class="spark"></i>245</span>
+              <span class="win-export" aria-hidden="true">Export</span>
+            </div>
+          </div>
+
+          <!-- Window body -->
+          <div class="win-body">
+            <!-- Left rail -->
+            <aside class="win-left" aria-hidden="true">
+              <div class="rail-tabs">
+                <span class="rail-tab active">Pages</span>
+                <span class="rail-tab">Sections</span>
+                <span class="rail-tab">Media</span>
+              </div>
+              <p class="rail-label">Pages</p>
+              <div class="rail-item active"><span class="dot"></span><span>Home<small>index.html</small></span></div>
+              <div class="rail-item"><span class="dot"></span><span>Menu<small>menu.html</small></span></div>
+              <div class="rail-item"><span class="dot"></span><span>Visit<small>visit.html</small></span></div>
+              <div class="rail-add">+ Add page</div>
+            </aside>
+
+            <!-- Center: browser preview that morphs draft -> design -->
+            <div class="win-center">
+              <div class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="url"><svg viewBox="0 0 12 12" width="10" height="10"><path d="M3.2 5.2V4a2.8 2.8 0 0 1 5.6 0v1.2" fill="none" stroke="currentColor" stroke-width="1"/><rect x="2.4" y="5.2" width="7.2" height="5" rx="1.2" fill="currentColor" opacity=".55"/></svg> marigold.studio</span>
+                </div>
+
+                <!-- DRAFT (copy review) view -->
+                <div class="stage-draft" data-stage="draft">
+                  <span class="stage-tag tag-copy"><i></i>Copy ready · Editing enabled</span>
+                  <div class="draft-doc">
+                    <span class="draft-eyebrow">Neighborhood café &amp; bakery</span>
+                    <p class="draft-h" contenteditable="false">Slow mornings, good bread.</p>
+                    <p class="draft-p">Marigold is a corner café in the old mill district —
+                      stone-milled loaves, single-origin coffee, and a window seat with your name on it.</p>
+                    <p class="draft-p short">Open Tuesday through Sunday, from first light.</p>
+                    <span class="draft-btn">Reserve a table</span>
+                  </div>
+                  <div class="design-sweep" aria-hidden="true">
+                    <span class="stage-tag tag-design"><i></i>Design pass generating</span>
+                  </div>
+                </div>
+
+                <!-- DESIGNED preview view -->
+                <div class="stage-design" data-stage="design" aria-hidden="true">
+                  <div class="mini-site">
+                    <div class="ms-nav">
+                      <span class="ms-logo"><i></i>Marigold</span>
+                      <span class="ms-links"><span></span><span></span><span></span></span>
+                    </div>
+                    <div class="ms-hero">
+                      <div class="ms-hero-text">
+                        <span class="ms-eyebrow">Café &amp; bakery · since 2019</span>
+                        <p class="ms-h">Slow mornings,<br><em>good bread.</em></p>
+                        <p class="ms-sub">Stone-milled loaves and single-origin coffee in the old mill district.</p>
+                        <span class="ms-btn">Reserve a table</span>
+                      </div>
+                      <div class="ms-hero-img"><span class="ms-img-label">hero · placeholder</span></div>
+                    </div>
+                    <div class="ms-strip">
+                      <div class="ms-card"><span class="ms-card-img"></span><b>Daily loaves</b></div>
+                      <div class="ms-card"><span class="ms-card-img"></span><b>Pour-over bar</b></div>
+                      <div class="ms-card"><span class="ms-card-img"></span><b>Window seats</b></div>
+                    </div>
+                  </div>
+                  <span class="stage-tag tag-live"><i></i>Preview live</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right rail: assistant + timeline -->
+            <aside class="win-right">
+              <div class="right-tabs" aria-hidden="true">
+                <span class="r-tab active">Assistant</span>
+                <span class="r-tab">Selected</span>
+                <span class="r-tab">Quality</span>
+              </div>
+
+              <h3 class="assist-title">Building your site</h3>
+              <p class="assist-sub">Content first — so you can shape it while the design catches up.</p>
+
+              <ol class="timeline" id="hero-timeline" aria-label="Build progress">
+                <li data-step="1"><span class="tl-dot"></span><span class="tl-label">Understanding the idea</span></li>
+                <li data-step="2"><span class="tl-dot"></span><span class="tl-label">Drafting structure</span></li>
+                <li data-step="3"><span class="tl-dot"></span><span class="tl-label">Writing copy</span></li>
+                <li data-step="4"><span class="tl-dot"></span><span class="tl-label">Reviewing content</span></li>
+                <li data-step="5"><span class="tl-dot"></span><span class="tl-label">Designing visual system</span></li>
+                <li data-step="6"><span class="tl-dot"></span><span class="tl-label">Opening preview</span></li>
+              </ol>
+
+              <div class="assist-msg" id="assist-msg" aria-hidden="true">
+                <span class="assist-from">Refine with Conjure</span>
+                <p class="assist-bubble"><span class="typed" id="typed-line"></span><span class="caret"></span></p>
+              </div>
+
+              <div class="composer" aria-hidden="true">
+                <span class="composer-spark"></span>
+                <span class="composer-ph">Ask Conjure to change something…</span>
+              </div>
+            </aside>
+          </div>
+        </div>
+        <div class="stage-floor" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- Audience marquee -->
+    <section class="marquee-wrap reveal" aria-hidden="true">
+      <div class="marquee">
+        <div class="marquee-track">
+          <span>for founders</span><span class="m-dot"></span>
+          <span>for creators</span><span class="m-dot"></span>
+          <span>for small businesses</span><span class="m-dot"></span>
+          <span>for freelancers</span><span class="m-dot"></span>
+          <span>for designers</span><span class="m-dot"></span>
+          <span>for educators</span><span class="m-dot"></span>
+          <span>for studios</span><span class="m-dot"></span>
+          <span>for people with ideas in motion</span><span class="m-dot"></span>
+          <span>for founders</span><span class="m-dot"></span>
+          <span>for creators</span><span class="m-dot"></span>
+          <span>for small businesses</span><span class="m-dot"></span>
+          <span>for freelancers</span><span class="m-dot"></span>
+          <span>for designers</span><span class="m-dot"></span>
+          <span>for educators</span><span class="m-dot"></span>
+          <span>for studios</span><span class="m-dot"></span>
+          <span>for people with ideas in motion</span><span class="m-dot"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ WORKFLOW ============================ -->
+    <section class="section" id="workflow" aria-labelledby="workflow-title">
+      <div class="section-head reveal">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>How Conjure works</p>
+        <h2 id="workflow-title" class="display section-title">
+          From first spark to a site<br>you can stand behind.
+        </h2>
+        <p class="section-lede">
+          Conjure is a guided studio, not a one-shot generator. Each step keeps you in the
+          chair — reading, editing, and steering as your site takes shape.
+        </p>
+      </div>
+
+      <ol class="flow">
+        <li class="flow-step reveal">
+          <span class="flow-num">01</span>
+          <h3>Describe the site</h3>
+          <p>Tell Conjure what you're building, who it's for, and the tone you want. A sentence is enough to begin.</p>
+        </li>
+        <li class="flow-step reveal" data-reveal-delay="60">
+          <span class="flow-num">02</span>
+          <h3>Conjure drafts the structure</h3>
+          <p>It routes your idea and lays out the pages, sections, and copy around it — a real starting point, fast.</p>
+        </li>
+        <li class="flow-step reveal" data-reveal-delay="120">
+          <span class="flow-num">03</span>
+          <h3>Edit the copy as it lands</h3>
+          <p>Content arrives before the design does. Read it, rewrite it, make it yours while the visual system builds.</p>
+        </li>
+        <li class="flow-step reveal" data-reveal-delay="180">
+          <span class="flow-num">04</span>
+          <h3>Watch the design arrive</h3>
+          <p>The plain draft transforms into a composed, browser-true preview — type, color, layout, and rhythm.</p>
+        </li>
+        <li class="flow-step reveal" data-reveal-delay="240">
+          <span class="flow-num">05</span>
+          <h3>Refine with the assistant</h3>
+          <p>Ask for changes in plain language. Polish a section, warm up a call to action, rework the hero.</p>
+        </li>
+        <li class="flow-step reveal" data-reveal-delay="300">
+          <span class="flow-num">06</span>
+          <h3>Build out and prepare to launch</h3>
+          <p>Add pages, refine sections, and shape a site that's ready to share when you are.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============================ PRODUCT SHOWCASE ============================ -->
+    <section class="section showcase" id="product" aria-labelledby="product-title">
+      <div class="section-head reveal">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>The studio workspace</p>
+        <h2 id="product-title" class="display section-title">A creative command center, not a form.</h2>
+        <p class="section-lede">
+          Everything sits in one calm surface: your pages on the left, a live browser-true
+          preview in the center, and an assistant on the right that answers what this is,
+          what you can do, and what to try next.
+        </p>
+      </div>
+
+      <div class="showcase-window reveal" data-reveal-delay="120">
+        <div class="window window-lg" aria-label="The Conjure workspace with an editable preview and a refinement assistant.">
+          <div class="win-top">
+            <div class="traffic" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="win-project">
+              <span class="win-project-mark" aria-hidden="true"></span>
+              <span class="win-project-name">Atelier Brun <em>·</em> Conjure</span>
+            </div>
+            <div class="win-modes" aria-hidden="true">
+              <span class="mode active">Design</span>
+              <span class="mode">Code</span>
+              <span class="mode">Preview</span>
+            </div>
+            <div class="win-top-right">
+              <span class="credits" aria-hidden="true"><i class="spark"></i>312</span>
+              <span class="win-export" aria-hidden="true">Export</span>
+            </div>
+          </div>
+
+          <div class="win-body">
+            <aside class="win-left" aria-hidden="true">
+              <div class="rail-tabs">
+                <span class="rail-tab active">Pages</span>
+                <span class="rail-tab">Sections</span>
+                <span class="rail-tab">Media</span>
+              </div>
+              <p class="rail-label">Pages</p>
+              <div class="rail-item active"><span class="dot"></span><span>Home<small>index.html</small></span></div>
+              <div class="rail-item"><span class="dot"></span><span>Studio<small>studio.html</small></span></div>
+              <div class="rail-item"><span class="dot"></span><span>Contact<small>contact.html</small></span></div>
+              <div class="rail-add">+ Add page</div>
+              <div class="rail-footer"><span class="dot warn"></span>2 to review</div>
+            </aside>
+
+            <div class="win-center">
+              <div class="browser">
+                <div class="browser-bar" aria-hidden="true"><span class="url">atelierbrun.com</span></div>
+                <div class="showcase-preview">
+                  <div class="mini-site mini-site--brun">
+                    <div class="ms-nav">
+                      <span class="ms-logo"><i></i>Atelier Brun</span>
+                      <span class="ms-links"><span></span><span></span><span></span><span></span></span>
+                    </div>
+                    <div class="ms-hero ms-hero--brun">
+                      <div class="ms-hero-text">
+                        <span class="ms-eyebrow">Furniture &amp; objects · handmade</span>
+                        <p class="ms-h">Quiet pieces,<br><em>made to last.</em></p>
+                        <p class="ms-sub">A small workshop turning solid oak and brass into furniture for slow rooms.</p>
+                        <span class="ms-btn">View the collection</span>
+                      </div>
+                      <div class="ms-hero-img"><span class="ms-img-label">workshop · placeholder</span></div>
+                    </div>
+                  </div>
+                  <span class="label-chip chip-a">Editing enabled</span>
+                  <span class="label-chip chip-b">Preview live</span>
+                </div>
+              </div>
+            </div>
+
+            <aside class="win-right win-right--showcase">
+              <div class="right-tabs" aria-hidden="true">
+                <span class="r-tab active">Assistant</span>
+                <span class="r-tab">Selected</span>
+                <span class="r-tab">Quality</span>
+              </div>
+              <h3 class="assist-title small">Your site is ready to edit.</h3>
+              <p class="assist-sub">Click any text, image, button, or section to see options.</p>
+
+              <p class="rail-label tiny">Next best steps</p>
+              <div class="step-row"><span class="step-ic" aria-hidden="true"></span><span>Replace placeholder images</span><span class="step-free">Free</span></div>
+              <div class="step-row"><span class="step-ic" aria-hidden="true"></span><span>Add an About page</span><span class="step-free">Free</span></div>
+              <div class="step-row"><span class="step-ic" aria-hidden="true"></span><span>Review quality &amp; readiness</span><span class="step-free">Free</span></div>
+
+              <div class="aura-card" aria-hidden="true">
+                <div class="aura-card-head">
+                  <span class="aura-spark"></span>
+                  <span class="aura-card-title">Refine with Conjure</span>
+                </div>
+                <p class="aura-card-body">“Make the hero feel more premium and warm up the call to action.”</p>
+                <span class="aura-card-cta">Apply refinement</span>
+              </div>
+
+              <div class="composer showcase-composer" aria-hidden="true">
+                <span class="composer-spark"></span>
+                <span class="composer-ph">Ask Conjure to change something…</span>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ DIFFERENTIATION ============================ -->
+    <section class="section pillars-section" aria-labelledby="diff-title">
+      <div class="section-head reveal">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Why Conjure</p>
+        <h2 id="diff-title" class="display section-title">Built for control, not surprises.</h2>
+      </div>
+
+      <div class="pillars">
+        <article class="pillar reveal glow-card">
+          <span class="pillar-index" aria-hidden="true">Not a template machine</span>
+          <h3 class="display">It starts from <span class="accent">your idea</span>.</h3>
+          <p>Conjure builds around your audience, tone, and content — not a layout someone else already filled in. Two cafés never come out the same.</p>
+        </article>
+        <article class="pillar reveal glow-card" data-reveal-delay="90">
+          <span class="pillar-index" aria-hidden="true">Not a blank canvas</span>
+          <h3 class="display">Real structure, <span class="accent">first pass</span>.</h3>
+          <p>You get pages, sections, and copy immediately, then shape the details. No staring at an empty page wondering where to begin.</p>
+        </article>
+        <article class="pillar reveal glow-card" data-reveal-delay="180">
+          <span class="pillar-index" aria-hidden="true">Not a black box</span>
+          <h3 class="display">Steer every <span class="accent">decision</span>.</h3>
+          <p>Edit the copy, refine a section, regenerate a page, change direction. Conjure does the heavy lifting; the result stays yours.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================ EXAMPLES ============================ -->
+    <section class="section" id="examples" aria-labelledby="ex-title">
+      <div class="section-head reveal">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Prompt to site</p>
+        <h2 id="ex-title" class="display section-title">One sentence in. A whole site out.</h2>
+        <p class="section-lede">A glimpse of where an idea can land — every preview here is shaped, editable, and yours to refine.</p>
+      </div>
+
+      <div class="examples">
+        <!-- Example 1: barber -->
+        <article class="example reveal glow-card">
+          <div class="example-prompt">
+            <span class="prompt-spark" aria-hidden="true"></span>
+            <p>“A landing page for a luxury mobile barber in Atlanta.”</p>
+          </div>
+          <div class="example-preview ex-barber" role="img" aria-label="A dark, refined one-page site for a luxury mobile barber.">
+            <div class="exp-nav"><span class="exp-logo">FADE&amp;CO</span><span class="exp-link">Book</span></div>
+            <div class="exp-body">
+              <span class="exp-eyebrow">Mobile grooming · Atlanta</span>
+              <p class="exp-h">The chair<br>comes to you.</p>
+              <span class="exp-btn">Book a cut</span>
+            </div>
+          </div>
+          <p class="example-result">A dark, booking-first one-pager with a services grid and a standing-appointment offer.</p>
+        </article>
+
+        <!-- Example 2: nonprofit -->
+        <article class="example reveal glow-card" data-reveal-delay="90">
+          <div class="example-prompt">
+            <span class="prompt-spark" aria-hidden="true"></span>
+            <p>“A warm nonprofit site for youth art programs.”</p>
+          </div>
+          <div class="example-preview ex-nonprofit" role="img" aria-label="A bright, hopeful nonprofit site for youth art programs.">
+            <div class="exp-nav np"><span class="exp-logo">Brushfire</span><span class="exp-link np">Donate</span></div>
+            <div class="exp-body np">
+              <span class="exp-eyebrow np">Youth arts · since 2012</span>
+              <p class="exp-h np">Every kid<br>deserves color.</p>
+              <span class="exp-btn np">Support a studio</span>
+            </div>
+          </div>
+          <p class="example-result">Bright and hopeful, donation-ready, with program highlights and a volunteer call.</p>
+        </article>
+
+        <!-- Example 3: photographer -->
+        <article class="example reveal glow-card" data-reveal-delay="180">
+          <div class="example-prompt">
+            <span class="prompt-spark" aria-hidden="true"></span>
+            <p>“A polished portfolio for an editorial wedding photographer.”</p>
+          </div>
+          <div class="example-preview ex-photo" role="img" aria-label="A quiet, image-led portfolio for an editorial wedding photographer.">
+            <div class="exp-nav ph"><span class="exp-logo ph">MARA WILDE</span><span class="exp-link ph">Inquire</span></div>
+            <div class="exp-body ph">
+              <span class="exp-eyebrow ph">Editorial weddings</span>
+              <p class="exp-h ph">Light,<br><em>held still.</em></p>
+              <div class="exp-gallery"><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <p class="example-result">A quiet, image-led portfolio with a gallery, a story page, and an inquiry form.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================ FEATURE BENTO ============================ -->
+    <section class="section" aria-labelledby="feat-title">
+      <div class="section-head reveal">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>What's inside</p>
+        <h2 id="feat-title" class="display section-title">A studio's worth of craft.</h2>
+      </div>
+
+      <div class="bento">
+        <article class="bento-card span-2 reveal glow-card">
+          <div class="bento-visual bento-visual--gen" aria-hidden="true">
+            <span class="bv-prompt">A site for a ceramics studio…</span>
+            <span class="bv-arrow"></span>
+            <span class="bv-result"></span>
+          </div>
+          <h3>AI website generation</h3>
+          <p>Describe what you want and Conjure builds a full site around it — pages, sections, and copy included.</p>
+        </article>
+
+        <article class="bento-card reveal glow-card" data-reveal-delay="60">
+          <div class="bento-visual bento-visual--timeline" aria-hidden="true">
+            <i></i><i></i><i></i><i></i>
+          </div>
+          <h3>Progressive build timeline</h3>
+          <p>Watch each stage as it happens, from understanding the idea to opening the preview.</p>
+        </article>
+
+        <article class="bento-card reveal glow-card" data-reveal-delay="120">
+          <div class="bento-visual bento-visual--copy" aria-hidden="true">
+            <span class="bv-line"></span><span class="bv-line w2"></span><span class="bv-line w3 editing"></span>
+          </div>
+          <h3>Inline copy editing</h3>
+          <p>Review and rewrite your content directly while the design is still being generated.</p>
+        </article>
+
+        <article class="bento-card reveal glow-card" data-reveal-delay="60">
+          <div class="bento-visual bento-visual--preview" aria-hidden="true">
+            <span class="bv-browser"></span>
+          </div>
+          <h3>Live browser preview</h3>
+          <p>See a clean, browser-true rendering of your site — never raw markup.</p>
+        </article>
+
+        <article class="bento-card span-2 reveal glow-card" data-reveal-delay="120">
+          <div class="bento-visual bento-visual--assistant" aria-hidden="true">
+            <span class="bv-bubble">“Make this feel more like a luxury brand.”</span>
+            <span class="bv-bubble bv-bubble--ai">On it — refining the hero and palette.</span>
+          </div>
+          <h3>Refinement assistant</h3>
+          <p>Ask for changes in plain language. Conjure scopes the edit to exactly what you meant — a word, a section, a page.</p>
+        </article>
+
+        <article class="bento-card reveal glow-card">
+          <div class="bento-visual bento-visual--pages" aria-hidden="true">
+            <i></i><i></i><i class="add">+</i>
+          </div>
+          <h3>Additional pages</h3>
+          <p>Generate new pages that reuse and extend your site's existing direction.</p>
+        </article>
+
+        <article class="bento-card reveal glow-card" data-reveal-delay="60">
+          <div class="bento-visual bento-visual--section" aria-hidden="true">
+            <span class="bv-sec"></span><span class="bv-sec focus"></span><span class="bv-sec"></span>
+          </div>
+          <h3>Section-level edits</h3>
+          <p>Refine one part of a page without regenerating the whole thing.</p>
+        </article>
+
+        <article class="bento-card reveal glow-card" data-reveal-delay="120">
+          <div class="bento-visual bento-visual--credits" aria-hidden="true">
+            <span class="bv-credit"><i class="spark"></i>credits</span>
+          </div>
+          <h3>Credit-aware workflow</h3>
+          <p>Every cost is shown before you tap, and free edits stay free. No surprises.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================ deGRAAF ============================ -->
+    <section class="section degraaf" id="degraaf" aria-labelledby="dg-title">
+      <div class="degraaf-inner reveal">
+        <span class="degraaf-mark" aria-hidden="true"></span>
+        <p class="eyebrow centered"><span class="eyebrow-dot" aria-hidden="true"></span>The studio behind it</p>
+        <h2 id="dg-title" class="display degraaf-title">deGraaf</h2>
+        <p class="degraaf-body">
+          deGraaf builds creative tools for people with ideas in motion. Conjure is our
+          first release — an AI website studio designed to make launching feel less like
+          wrestling software and more like directing a scene.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================ BETA CTA ============================ -->
+    <section class="section beta" id="beta" aria-labelledby="beta-title">
+      <div class="beta-panel reveal">
+        <div class="beta-glow" aria-hidden="true"></div>
+        <div class="beta-head">
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Join the waitlist</p>
+          <h2 id="beta-title" class="display section-title">Be first in line when Conjure opens.</h2>
+          <p class="section-lede">
+            We're putting the final polish on Conjure before the macOS beta opens. Join the
+            waitlist and we'll send TestFlight invitations in small waves as it's ready.
+          </p>
+          <p class="beta-trust">Early access · Limited beta · Help shape the product</p>
+        </div>
+
+        <!-- TODO(beta): wire submission to Firebase (store request) + Loops (beta comms).
+             For now the form validates client-side, logs a structured payload, and shows
+             the success state. No backend handler is attached. -->
+        <form class="beta-form" id="beta-form" novalidate>
+          <div class="field">
+            <label for="bf-name">Name</label>
+            <input id="bf-name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
+          </div>
+          <div class="field">
+            <label for="bf-email">Email</label>
+            <input id="bf-email" name="email" type="email" autocomplete="email" placeholder="you@studio.com" required />
+          </div>
+
+          <div class="field field-half">
+            <label for="bf-platform">Platform interest</label>
+            <div class="select-wrap">
+              <select id="bf-platform" name="platform" required>
+                <option value="" disabled selected>Choose one</option>
+                <option value="macos">macOS</option>
+                <option value="windows-later">Windows (later)</option>
+                <option value="other">Other</option>
+              </select>
+              <svg class="select-chev" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M3 5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+
+          <div class="field field-half">
+            <label for="bf-role">Your role</label>
+            <div class="select-wrap">
+              <select id="bf-role" name="role" required>
+                <option value="" disabled selected>Choose one</option>
+                <option value="founder">Founder</option>
+                <option value="designer">Designer</option>
+                <option value="small-business">Small business owner</option>
+                <option value="agency-freelancer">Agency / freelancer</option>
+                <option value="educator-student">Educator / student</option>
+                <option value="other">Other</option>
+              </select>
+              <svg class="select-chev" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M3 5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+
+          <div class="field field-full">
+            <label for="bf-building">What are you building?</label>
+            <textarea id="bf-building" name="building" rows="3" placeholder="A site for my…"></textarea>
+          </div>
+
+          <label class="checkbox field-full">
+            <input type="checkbox" id="bf-feedback" name="feedback" />
+            <span class="checkbox-box" aria-hidden="true"></span>
+            <span>I'm happy to give feedback that helps shape the product.</span>
+          </label>
+
+          <div class="field-full beta-submit-row">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Join the Waitlist</button>
+            <p class="beta-fineprint">macOS first, through TestFlight. We're collecting Windows interest as we explore future platform support.</p>
+          </div>
+        </form>
+
+        <!-- Success state -->
+        <div class="beta-success" id="beta-success" hidden>
+          <span class="success-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26"><path d="M5 13l4 4 10-11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3 class="display">You're on the waitlist.</h3>
+          <p>We'll send macOS TestFlight invitations in waves as beta seats open. Keep an eye on your inbox.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="deGraaf Conjure home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-words">
+            <span class="brand-parent">deGraaf</span>
+            <span class="brand-product">Conjure</span>
+          </span>
+        </a>
+        <p class="footer-tag">An AI website studio for ideas in motion.</p>
+      </div>
+
+      <nav class="footer-cols" aria-label="Footer">
+        <div class="footer-col">
+          <p class="footer-col-title">Product</p>
+          <a href="#workflow">Workflow</a>
+          <a href="#product">Workspace</a>
+          <a href="#examples">Examples</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Beta</p>
+          <a href="#beta">Join the waitlist</a>
+          <a href="#beta">macOS · TestFlight</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Studio</p>
+          <a href="#degraaf">deGraaf</a>
+          <a href="#" data-placeholder>Privacy</a>
+          <a href="#" data-placeholder>Terms</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer-base">
+      <p class="colophon">Conjured with taste · Set in Fraunces &amp; Inter · MMXXVI</p>
+      <p class="copyright">© <span id="year">2026</span> deGraaf. Conjure is a deGraaf studio release.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
