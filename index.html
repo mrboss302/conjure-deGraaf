@@ -6,16 +6,74 @@
   <title>deGraaf Conjure — The AI website studio</title>
   <meta name="description" content="Conjure is an AI website studio for turning rough ideas into polished, editable websites without losing creative control. Describe your site, review the copy before the design lands, and refine with the assistant. Join the waitlist for the macOS beta." />
   <meta name="theme-color" content="#0B0B0D" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="https://conjure.degraaf.app/" />
 
-  <!-- Social -->
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="deGraaf Conjure" />
   <meta property="og:title" content="deGraaf Conjure — Conjure a website worth launching." />
   <meta property="og:description" content="An AI website studio for shaping rough ideas into polished, editable sites. Join the waitlist for the macOS beta." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://conjure.degraaf.app/" />
-  <!-- TODO(og): add a 1200x630 share image and point this at its absolute URL. -->
+  <meta property="og:locale" content="en_US" />
   <meta property="og:image" content="https://conjure.degraaf.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="deGraaf Conjure — Conjure a website worth launching." />
+
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="deGraaf Conjure — Conjure a website worth launching." />
+  <meta name="twitter:description" content="An AI website studio for shaping rough ideas into polished, editable sites. Join the waitlist for the macOS beta." />
+  <meta name="twitter:image" content="https://conjure.degraaf.app/og-image.png" />
+  <meta name="twitter:image:alt" content="deGraaf Conjure — Conjure a website worth launching." />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://conjure.degraaf.app/#organization",
+        "name": "deGraaf",
+        "url": "https://conjure.degraaf.app/",
+        "logo": "https://conjure.degraaf.app/icon-512.png",
+        "description": "deGraaf builds creative tools for people with ideas in motion."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://conjure.degraaf.app/#website",
+        "url": "https://conjure.degraaf.app/",
+        "name": "deGraaf Conjure",
+        "description": "An AI website studio for turning rough ideas into polished, editable websites.",
+        "publisher": { "@id": "https://conjure.degraaf.app/#organization" },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Conjure",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "macOS",
+        "url": "https://conjure.degraaf.app/",
+        "description": "Conjure is an AI website studio for turning rough ideas into polished, editable websites without losing creative control.",
+        "publisher": { "@id": "https://conjure.degraaf.app/#organization" },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/PreOrder"
+        }
+      }
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
