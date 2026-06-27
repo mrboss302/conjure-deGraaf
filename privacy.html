@@ -9,6 +9,13 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    // Consent Mode: analytics off until the visitor opts in via the cookie banner.
+    gtag('consent', 'default', { 'analytics_storage': 'denied' });
+    try {
+      if (localStorage.getItem('conjure-consent') === 'granted') {
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      }
+    } catch (e) {}
     gtag('js', new Date());
     gtag('config', 'G-92NT7NV7WX');
   </script>
@@ -86,8 +93,18 @@
         <li>Whether you've opted in to <strong>give feedback</strong> that helps shape the product.</li>
       </ul>
       <p>
-        We do not collect payment information, and we don't use third-party advertising
-        or tracking cookies on this site.
+        We do not collect payment information, and we don't use advertising cookies on
+        this site.
+      </p>
+
+      <h2>Analytics</h2>
+      <p>
+        We use <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google
+        Analytics</a> to understand how people find and use the site — for example, which
+        pages are visited and how visitors arrive. This helps us improve Conjure. Analytics
+        cookies are only set after you accept them in the cookie banner; you can decline,
+        and the site works exactly the same. We don't use this data to identify you
+        personally or for advertising.
       </p>
 
       <h2>How we use it</h2>
@@ -101,7 +118,9 @@
       <p>
         Waitlist signups are stored and emailed through
         <a href="https://loops.so/privacy" target="_blank" rel="noopener noreferrer">Loops</a>,
-        our email and audience provider, acting on our behalf. The site is hosted on
+        our email and audience provider, acting on our behalf. Site analytics are provided
+        by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google
+        Analytics</a>, and the site is hosted on
         <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare</a>.
         We don't sell or rent your information to anyone.
       </p>

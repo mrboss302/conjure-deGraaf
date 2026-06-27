@@ -333,4 +333,47 @@
         });
     });
   }
+
+  /* =================================================================
+     Cookie consent banner (Google Analytics Consent Mode)
+     Analytics defaults to "denied" in the page <head>. This banner
+     lets the visitor opt in/out; the choice is stored in localStorage
+     and applied via gtag('consent', 'update', …).
+     ================================================================= */
+  (function () {
+    var KEY = "conjure-consent";
+    var stored;
+    try { stored = localStorage.getItem(KEY); } catch (e) { stored = "denied"; }
+    if (stored === "granted" || stored === "denied") return; // decision already made
+
+    var setConsent = function (granted) {
+      try { localStorage.setItem(KEY, granted ? "granted" : "denied"); } catch (e) {}
+      if (typeof window.gtag === "function") {
+        window.gtag("consent", "update", { analytics_storage: granted ? "granted" : "denied" });
+      }
+      if (banner && banner.parentNode) {
+        banner.classList.remove("show");
+        setTimeout(function () { if (banner.parentNode) banner.parentNode.removeChild(banner); }, 300);
+      }
+    };
+
+    var banner = document.createElement("div");
+    banner.className = "cookie-banner";
+    banner.setAttribute("role", "dialog");
+    banner.setAttribute("aria-label", "Cookie consent");
+    banner.innerHTML =
+      '<p class="cookie-text">We use cookies for analytics to understand how the site is used. ' +
+      'See our <a href="privacy.html">Privacy</a> notice.</p>' +
+      '<div class="cookie-actions">' +
+      '<button type="button" class="btn btn-ghost cookie-decline">Decline</button>' +
+      '<button type="button" class="btn btn-primary cookie-accept">Accept</button>' +
+      '</div>';
+    document.body.appendChild(banner);
+
+    banner.querySelector(".cookie-accept").addEventListener("click", function () { setConsent(true); });
+    banner.querySelector(".cookie-decline").addEventListener("click", function () { setConsent(false); });
+
+    // Animate in after insertion.
+    requestAnimationFrame(function () { banner.classList.add("show"); });
+  })();
 })();
